@@ -1,0 +1,85 @@
+<mujoco>
+    <worldbody>
+    	<light diffuse=".5 .5 .5" pos="0 0 3" dir="0 0 -1"/>
+    	<geom type="plane" size="10 10 0.1" rgba=".9 0 0 1"/>
+ 
+        <body name = "trunk" pos="0 0 1.5">
+ 			<joint type="free"/>
+ 			<geom type="cylinder" size=".1 1.5" rgba=".15 .07 .02 1" mass ="1000"/>
+		
+            <body name = "leftbranch1" pos=".3 0 -0.75" euler='0 45 0'>
+     			<geom type="cylinder" size=".05 0.5" rgba=".38 .17 .05 1"/>
+     			
+     			<body name="leaf1" pos=".08 0 -.2">
+                    <joint name="leaf1_joint" type="hinge" axis="0 1 0" pos="0 0 0" range="-5 5"/>
+                    <geom type="ellipsoid" size=".02 .02 .01" rgba="0 .5 0 1"/>
+                </body>
+                <body name="leaf2" pos="-.08 0 .2">
+                   <joint name="leaf2_joint" type="hinge" axis="0 1 0" pos="0 0 0" range="-5 5"/>
+                   <geom type="ellipsoid" size=".02 .02 .01" rgba="0 .5 0 1"/>
+               </body>
+               
+    		</body>
+    		
+    		
+    		<body name = "rightbranch1" pos="-.3 0 -0.25" euler='0 -45 0'>
+     			<geom type="cylinder" size=".05 0.5" rgba=".38 .17 .05 1"/>
+     			
+         		<body name="leaf3" pos=".08 0 -.2">
+                    <joint name="leaf3_joint" type="hinge" axis="0 1 0" pos="0 0 0" range="-5 5"/>
+                    <geom type="ellipsoid" size=".02 .02 .01" rgba="0 .5 0 1"/>
+                </body>
+                <body name="leaf4" pos="-.08 0 .2">
+                   <joint name="leaf4_joint" type="hinge" axis="0 1 0" pos="0 0 0" range="-5 5"/>
+                   <geom type="ellipsoid" size=".02 .02 .01" rgba="0 .5 0 1"/>
+               </body>
+               
+    		</body>
+    		
+    		<body name = "leftbranch2" pos=".3 0 0.25" euler='0 45 0'>
+     			<geom type="cylinder" size=".05 0.5" rgba=".38 .17 .05 1"/>
+     			
+     			<body name="leaf5" pos=".08 0 -.2">
+                    <joint name="leaf5_joint" type="hinge" axis="0 1 0" pos="0 0 0" range="-5 5"/>
+                    <geom type="ellipsoid" size=".02 .02 .01" rgba="0 .5 0 1"/>
+                </body>
+                <body name="leaf6" pos="-.08 0 .2">
+                   <joint name="leaf6_joint" type="hinge" axis="0 1 0" pos="0 0 0" range="-5 5"/>
+                   <geom type="ellipsoid" size=".02 .02 .01" rgba="0 .5 0 1"/>
+               </body>
+               
+    		</body>
+    		
+    		<body name = "rightbranch2" pos="-.3 0 0.75" euler='0 -45 0'>
+     			<geom type="cylinder" size=".05 0.5" rgba=".38 .17 .05 1"/>
+     			
+     			<body name="leaf7" pos=".08 0 -.2">
+                    <joint name="leaf7_joint" type="hinge" axis="0 1 0" pos="0 0 0" range="-5 5"/>
+                    <geom type="ellipsoid" size=".02 .02 .01" rgba="0 .5 0 1"/>
+                </body>
+                <body name="leaf8" pos="-.08 0 .2">
+                   <joint name="leaf8_joint" type="hinge" axis="0 1 0" pos="0 0 0" range="-5 5"/>
+                   <geom type="ellipsoid" size=".02 .02 .01" rgba="0 .5 0 1"/>
+               </body>
+               
+    		</body>
+    		
+            
+            
+        </body>
+        
+    </worldbody>
+    
+    <actuator>
+        <motor name="leaf1_motor" joint="leaf1_joint" gear="0.01"/>
+        <motor name="leaf2_motor" joint="leaf2_joint" gear="0.01"/>
+        <motor name="leaf3_motor" joint="leaf3_joint" gear="0.01"/>
+        <motor name="leaf4_motor" joint="leaf4_joint" gear="0.01"/>
+        <motor name="leaf5_motor" joint="leaf5_joint" gear="0.01"/>
+        <motor name="leaf6_motor" joint="leaf6_joint" gear="0.01"/>
+        <motor name="leaf7_motor" joint="leaf7_joint" gear="0.01"/>
+        <motor name="leaf8_motor" joint="leaf8_joint" gear="0.01"/>
+
+    </actuator>
+    
+</mujoco>
