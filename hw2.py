@@ -14,11 +14,11 @@ pi = np.pi
 idx = 0
 
 with mujoco.viewer.launch_passive(m,d) as viewer:
-    for i in range(1000):
+    for i in range(10000):
         
         if i%50 == 0:
-           div = np.random.randint(-10, 11) / 10.0
            for j in range(len(d.ctrl)):
+               div = np.random.randint(-10, 11) / 10.0
                d.ctrl[j] = np.cos(pi)*div
         dm.mj_step(m,d)
         
